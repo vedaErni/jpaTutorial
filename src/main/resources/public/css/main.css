@@ -1,0 +1,153 @@
+body {
+	padding-top: 25px !important;
+}
+.inline-block{
+	display: inline-block;
+}
+.user-profile-table{
+	padding:20px;
+}
+.profile-stats {
+	text-align: center;
+	text-shadow: 1px 1px 0 #fff;
+	margin-top: 10px;
+
+}
+
+.profile-stats li {
+	padding: 20px;
+	display: inline-block;
+}
+
+.profile-stats span {
+	font-family: Helvetica, sans-serif;
+	font-weight: bold;
+	text-shadow: 1px 1px 0 #fff;
+	font-size: 4em;
+
+	display: block;
+	line-height: 1em;
+}
+
+.stats-table, .stats-chart {
+	display: table-cell;
+	min-height: 420px;
+}
+
+.chartArea {
+	margin-top: 15px;
+	width: 100%;
+	vertical-align: middle;
+	height: 320px;
+	display: inline-block;
+}
+
+/* Large desktop */
+@media (min-width: 1200px) {
+	.profile-stats li {
+		padding: 10px;
+	}
+}
+
+@media (max-width: 1200px) {
+	.profile-stats li {
+		padding: 10px !important;
+	}
+
+	.profile-stats span {
+		font-size: 3em;
+	}
+}
+
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) {
+	.profile-stats span {
+		font-size: 3em;
+	}
+
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
+	.profile img {
+		width: 75px;
+	}
+
+	.profile h2 {
+		font-size: 1.7em;
+	}
+
+	.profile-stats span {
+		font-size: 2em;
+		text-align: center;
+	}
+	.profile-stats{
+		padding: 0;
+		text-align: left;
+	}
+	.rating-xs{
+		font-size: 1.6em;
+	}
+
+
+	.dashboard-matches{
+		font-size: 0.9em;
+	}
+	.dashboard-matches .btn{
+		/*font-size: 12px;*/
+		/*padding: 3px 6px;*/
+	}
+
+
+}
+
+/* Landscape phones and down */
+@media (max-width: 480px) {
+	.dashboard-matches{
+		font-size: 0.8em;
+	}
+}
+.matches-vs{
+	margin-top: 30px;
+}
+
+.vertical-align {
+	display: flex;
+	align-items: center;
+}
+
+/*    Dashboard - upcoming matches and planned matches */
+.vertical-align-row{
+	display: table;
+	table-layout: fixed;
+	height: 100%;
+}
+
+.vertical-align-col{
+	display: table-cell;
+	vertical-align: middle;
+	float: none;
+}
+
+.no-padding {
+	padding: 0px !important;
+}
+.min-padding{
+	padding: 2px !important;
+}
+.custom-label{
+	display: block;
+	padding: .3em .3em;
+	letter-spacing: -1px;
+	font-weight: 700;
+	line-height: 1;
+	color: #fff;
+	text-align: center;
+	vertical-align: baseline;
+	border-radius: .25em;
+}
+
+.dotted-border{
+	border-top: 1px dotted #e7e7e7;
+	padding:5px;
+}

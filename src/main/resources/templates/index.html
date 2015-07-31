@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="en" th:include="layout :: page">
+<head>
+    <title>FootSign / Home</title>
+</head>
+<body>
+
+<div th:fragment="content">
+    <div>
+        <div class="row">
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <ul class="nav navbar-nav">
+                        <li id="employee"><a th:href="@{/home}">InsertEmployee </a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+        <div class="row text-center">
+            Hello on JPA Tutorial Application
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
