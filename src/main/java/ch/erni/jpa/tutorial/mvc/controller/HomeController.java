@@ -1,7 +1,8 @@
 package ch.erni.jpa.tutorial.mvc.controller;
 
 
-import ch.erni.jpa.tutorial.dao.DepartmentDaoImpl;
+import ch.erni.jpa.tutorial.dao.DepartmentDao;
+import ch.erni.jpa.tutorial.dao.DepartmentDaoRemote;
 import ch.erni.jpa.tutorial.dao.EmployeeDao;
 import ch.erni.jpa.tutorial.model.Department;
 import ch.erni.jpa.tutorial.util.ContextUtil;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.annotation.Resource;
 import javax.ejb.EJB;
 import javax.ejb.embeddable.EJBContainer;
 import javax.interceptor.Interceptors;
@@ -27,13 +29,15 @@ import javax.validation.Valid;
 @Controller(value = "home")
 public class HomeController {
 
-    @Autowired
-    private DepartmentDaoImpl departmentDao;
+    //@Resource(mappedName = "java:global/JpaTutorial/DepartmentDao!ch.erni.jpa.tutorial.dao.DepartmentDao")
+    @EJB(mappedName = "global/jpaTutorial/DepartmentDao")
+    private DepartmentDaoRemote departmentDao;
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String index() throws NamingException {
 
         InitialContext ctx = new InitialContext();
+
         NamingEnumeration<NameClassPair> list = ctx.list("");
         while (list.hasMore()) {
             System.out.println(list.next().getName());

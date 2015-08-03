@@ -7,12 +7,13 @@ import org.springframework.stereotype.Repository;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import java.io.Serializable;
 
 /**
  * Created by veda on 7/30/2015.
  */
-@Repository
-public class DepartmentDaoImpl {
+@Stateless
+public class DepartmentDao implements DepartmentDaoRemote {
 
     @PersistenceContext(name = "openjpa")
     private EntityManager entityManager;

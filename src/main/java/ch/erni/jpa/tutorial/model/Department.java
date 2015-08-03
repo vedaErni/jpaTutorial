@@ -1,13 +1,14 @@
 package ch.erni.jpa.tutorial.model;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 /**
  * Created by veda on 7/27/2015.
  */
 
 @Entity
-public class Department {
+public class Department implements Serializable{
 
     @Id
     @Column
